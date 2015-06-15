@@ -1,0 +1,41 @@
+<html>
+<style type="text/css">
+  div{
+
+    height: 150px;
+    text-align: center;
+  }
+  img{
+    vertical-align: middle;
+  }
+
+</style>
+
+
+
+
+  <head>
+    <div><img src="http://e.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=01c6b784e0dde711e3d247f797dff56a/3812b31bb051f81952bc04cbdfb44aed2f73e792.jpg" alt=""></div>
+    <title>{% block title %}缺省标题{% end %}</title>
+    {% block js %}{% end %} 
+  </head>
+  
+  <body background="http://d.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=9c66e7d38035e5dd942ca1de46f69c9e/a8773912b31bb0512bbdb4a9337adab44bede092.jpg">
+    <table border=1 width=80%>s
+      <tr style="height=100px;">
+        <td colspan=2>header</td> </tr>
+      <tr >
+        <td style='width:10em'>菜单
+        <ul style="list-style-type:none">
+          <li><a href="/">返回主页</a></li>
+          <li><a href="/stulist">学生</a></li>
+        </ul>
+        </td>
+        <td>
+        {% block content %}
+        {% end %}          
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
