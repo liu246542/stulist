@@ -1,6 +1,6 @@
 <html>
 <style type="text/css">
-  div{
+  div.tit{
 
     height: 150px;
     text-align: center;
@@ -15,20 +15,19 @@
 
 
   <head>
-    <div><img src="http://e.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=01c6b784e0dde711e3d247f797dff56a/3812b31bb051f81952bc04cbdfb44aed2f73e792.jpg" alt=""></div>
+    <div class="tit"><img  src="http://i1.tietuku.com/4a8ffc9be890ca2c.png" alt=""></div>
     <title>{% block title %}缺省标题{% end %}</title>
-    {% block js %}{% end %} 
+    {% block js %}
+    {% end %} 
   </head>
   
-  <body background="http://d.picphotos.baidu.com/album/s%3D1100%3Bq%3D90/sign=9c66e7d38035e5dd942ca1de46f69c9e/a8773912b31bb0512bbdb4a9337adab44bede092.jpg">
-    <table border=1 width=80%>s
-      <tr style="height=100px;">
-        <td colspan=2>header</td> </tr>
-      <tr >
-        <td style='width:10em'>菜单
+  <body background="http://i1.tietuku.com/0fadf463a92744b2.jpg">
+    <table border=1s align="center"  valign="middle" >
+        <td style='width:10em'>{% block menu %}{% end %}
         <ul style="list-style-type:none">
-          <li><a href="/">返回主页</a></li>
-          <li><a href="/stulist">学生</a></li>
+          {% block label1 %}{% end %}
+          {% block label2 %}
+          <a href="/stulist"><img src="http://i4.tietuku.com/0c0bf34f0c927aa8.gif"> </a>{% end %}
         </ul>
         </td>
         <td>
