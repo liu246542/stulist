@@ -6,14 +6,14 @@ import tornado.web
 import reqs
 
 
-
 handlers = [
     (r"/stulist", reqs.StudentListHandler),
     (r"/stuedit/(\d+|new)", reqs.StudentEditHandler),
     (r"/studel/(\d+)", reqs.StudentDelHandler),
     (r"/", reqs.MainHandler),
 ]
-application = tornado.web.Application(handlers, debug=True)
+
+application = tornado.web.Application(handlers,debug=True)
 application.listen(8888)
 
 if __name__ == '__main__':
