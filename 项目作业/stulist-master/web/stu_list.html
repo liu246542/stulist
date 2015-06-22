@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %} 
+  学生清单  
+{% end %}
+{% block js %}
+{% end %}
+
+{% block menu %}<h1  style="color:#DC143C; font-size:40px" ><p>主菜单</p></h1>{% end %}
+
+{% block label1 %}
+ <li><a style="color:#0000FF;font-size:25px" href="/"><p>返回主页</p></a></li>
+{% end %}
+
+{% block label2 %}
+<li><a style="color:#006400;font-size:25px" href="/stulist"><p>学生</p></a></li>
+{% end %}
+
+{% block content %}
+	<a style="font-size:30px;color:#9400D3" href="stuedit/new"><p>新建学生信息</p></a>
+	<hr>
+	<table border="3" align="center" valign="middle">
+		<tr>
+			<td>学号</td>
+			<td>姓名</td>
+			<td>出生日期</td>
+			<td>班级</td>
+			<td>性别</td>
+		</tr>
+		{% for stu in student %}
+		<tr>
+			<td>{{stu['stu_id']}}</td>
+			<td>{{ stu['name'] }}</td>
+			<td>{{stu['stu_bir']}}</td>
+			<td>{{ stu['stu_no'] }}</td>			
+			<td>{{ stu['gda'] }}</td>
+			<td>
+				<input type="button" onclick="javascript:window.location.href='stuedit/{{stu['stu_sn']}}';" value="修改">
+				<input type="button" onclick="javascript:window.location.href='studel/{{stu['stu_sn']}}';" value="删除">
+			</td>
+		</tr>
+		{% end %}
+	</table>
+	<img src ="/static/list.png" width="400" height="300" >
+{% end %}
