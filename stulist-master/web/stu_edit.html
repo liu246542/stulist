@@ -2,39 +2,16 @@
 {% block title %} 
   修改课程信息
 {% end %}
+{% block js %}
+
+{% end %} 
 
 {% block label2 %}
-<li><a href="/">
-    <html>
-<head>
-<style type="text/css">
-p {font-size:27px;}
-h4{font-size:25px;}
-</style>
-</head>
-<body>
-<p>返回主页</p>
-<h4></h4>
-</body>
-</html>
-</a></li>
+<li><a style="font-size:27px" href="/"><p>返回主页</p></a></li>
 {% end %}
 
-{ % block content %} 
-<a href="/stulist"><h4>返回学生清单</h4>    
-<html>
-<head>
-<style type="text/css">
-p {color:#0000CD}
-h4{color:#FF4500}
-</style>
-</head>
-<body>
-<p ></p>
-<h4></h4>
-</body>
-</html>
- </a>
+{% block content %}
+	<a style="color:#FF4500" href="/stulist"><h4 style="font-size:27px">返回学生清单</h4></a>
 	<hr>
 	<form action="/stuedit/{{student['stu_sn']}}" method="post">
 	学号：<input type="text" name="stu_id" value="{{student['stu_id']}}"><br>
@@ -45,5 +22,4 @@ h4{color:#FF4500}
     性别：<input type="text" name="gda" value="{{student['gda']}}">
     <input type="submit" value="提交">
     </form>
-
 {% end %}

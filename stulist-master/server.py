@@ -2,8 +2,9 @@
 
 import tornado.ioloop
 import tornado.web
-
+import os.path
 import reqs
+
 
 
 handlers = [
@@ -13,7 +14,12 @@ handlers = [
     (r"/", reqs.MainHandler),
 ]
 
-application = tornado.web.Application(handlers,debug=True)
+home_path = os.path.dirname(__file__)
+settings = {
+    "static_path": os.path.join(home_path, "static"),
+    "debug": "true"
+}
+application = tornado.web.Application(handlers, **settings)
 application.listen(8888)
 
 if __name__ == '__main__':
