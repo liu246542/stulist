@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block title %} 
+  学生清单  
+{% end %}
+{% block js %}
+
+{% end %} 
+
+{% block menu %}
+<html>
+<head>
+<style type="text/css">
+h1 {font-size:40px;}
+h2 {font-size:25px;}
+p {font-size:25px;}
+h3{font-size:30px;}
+</style>
+</head>
+<body>
+<h1>主菜单</h1>
+<h2></h2>
+<p></p>
+<h3></h3>
+</body>
+</html>
+{% end %}
+
+
+
+{% block label1 %}
+ <li><a href="/">
+<html>
+<head>
+<style type="text/css">
+p {color:#0000FF}
+h1{color:#DC143C}
+h3{color:#9400D3}
+</style>
+</head>
+<body>
+<p >返回主页</p>
+<h1></h1>
+<h3></h3>
+</body>
+</html>
+</a></li>
+{% end %}
+
+
+
+
+{% block label2 %}
+<li><a href="/stulist">
+
+<html>
+<head>
+<style type="text/css">
+h2{color:#006400;}
+</style>
+</head>
+
+<body>
+<h2>学生</h2>
+</body>
+</html>
+</a></li>
+
+{% end %}
+
+             
+
+
+
+
+{% block content %}
+
+        <html>
+        <head>
+        <style type="text/css">
+        body {font-family:sans-serif;}
+        </style>
+
+        </head>
+
+         <body>
+         <a href="stuedit/new"> <h3>新建学生信息</h3></a>
+	     <hr>
+         <table align="center" valign="middle">
+	     <td>学号</td>
+		 <td>姓名</td>
+		 <td>出生日期</td>
+		 <td>班级</td>
+		 <td>性别</td>
+         </body>
+         </html>
+
+          <html>
+          <body>
+          <p><img src ="http://pic.nen.com.cn/0/12/29/80/12298075_895985.jpg" width="400" height="300" > </p> 
+          <body>
+          </html>
+
+        {% for stu in student %}
+		<tr>
+			<td>{{stu['stu_id']}}</td>
+			<td>{{ stu['name'] }}</td>
+			<td>{{stu['stu_bir']}}</td>
+			<td>{{ stu['stu_no'] }}</td>			
+			<td>{{ stu['gda'] }}</td>
+			<td>
+				<input type="button" onclick="javascript:window.location.href='stuedit/{{stu['stu_sn']}}';" value="修改">
+				<input type="button" onclick="javascript:window.location.href='studel/{{stu['stu_sn']}}';" value="删除">
+			</td>
+		</tr>
+		{% end %}
+	</table>
+{% end %}
