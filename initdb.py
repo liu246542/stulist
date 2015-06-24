@@ -29,11 +29,10 @@ def init_data():
     sqlstr = """
     DELETE FROM student;
 
-    INSERT INTO student (stu_sn,stu_id,stu_bir,stu_no, name,gda)  VALUES 
-        (101, '1310201' , '19950101' , 1302 ,  '张三' , '男'), 
+    INSERT INTO student (stu_sn,stu_id,stu_bir,stu_no, name,gda)  VALUES
+        (101, '1310201' , '19950101' , 1302 ,  '张三' , '男'),
         (102, '1310401' , '19950202' , 1304 ,  '李四' , '女'),
         (103, '1310301' , '19950303' , 1303 ,  '王五' , '男');
-
     """
     with db_cursor() as cur :
         cur.execute(sqlstr)    
