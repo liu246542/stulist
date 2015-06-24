@@ -7,19 +7,30 @@
 {% end %} 
 
 {% block label2 %}
-<li><a style="font-size:27px" href="/"><p>返回主页</p></a></li>
+<li><div style="text-align:center">
+    <object>
+      <param name="movie" value="/static/home.swf"/>
+      <param name="quality" value="high"/>
+      <param name="wmode"value="transparent"/>
+    <embed src="/static/home.swf"  ></embed></object>
+    </div></li>
 {% end %}
 
 {% block content %}
-	<a style="color:#FF4500" href="/stulist"><h4 style="font-size:27px">返回学生清单</h4></a>
-	<hr>
+	<div style="text-align:center;">
+    <object >
+      <param name="movie" value="/static/stulist.swf"/>
+      <param name="quality" value="high"/>
+      <param name="wmode"value="transparent"/>
+    <embed src="/static/stulist.swf"  ></embed></object>
+    </div>
+	<hr/>
 	<form action="/stuedit/{{student['stu_sn']}}" method="post">
-	学号：<input type="text" name="stu_id" value="{{student['stu_id']}}"><br>
-    姓名：<input type="text" name="name" value="
-    {{student['name']}}"><br>
-    出生日期：<input type="text" name="stu_bir" value="{{student['stu_bir']}}"><br>
-    班级：<input type="text" name="stu_no" value="{{student['stu_no']}}"><br>
-    性别：<input type="text" name="gda" value="{{student['gda']}}">
+    学号：&nbsp;&nbsp;<input type="text" name="stu_id" value="{{student['stu_id']}}"  style="background-color:transparent"><br>
+    姓名：&nbsp;&nbsp;<input type="text" name="name" value="{{student['name']}}"  style="background-color:transparent"><br>
+    出生日期：<input type="text" name="stu_bir" value="{{student['stu_bir']}}"  style="background-color:transparent"><br>
+    班级：&nbsp;&nbsp;<input type="text" name="stu_no" value="{{student['stu_no']}}"  style="background-color:transparent"><br>
+    性别：&nbsp;&nbsp;<input type="text" name="gda" value="{{student['gda']}}" style="background-color:transparent">
     <input type="submit" value="提交">
     </form>
 {% end %}

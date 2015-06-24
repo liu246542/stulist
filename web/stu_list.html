@@ -5,18 +5,29 @@
 {% block js %}
 {% end %}
 
-{% block menu %}<h1  style="color:#DC143C; font-size:40px" ><p>主菜单</p></h1>{% end %}
+{% block menu %}{% end %}
 
 {% block label1 %}
- <li><a style="color:#0000FF;font-size:25px" href="/"><p>返回主页</p></a></li>
+ <li><div style="text-align:center">
+    <object>
+      <param name="movie" value="/static/home.swf"/>
+      <param name="quality" value="high"/>
+      <param name="wmode"value="transparent"/>
+    <embed src="/static/home.swf"  ></embed></object>
+    </div></li>
 {% end %}
 
 {% block label2 %}
-<li><a style="color:#006400;font-size:25px" href="/stulist"><p>学生</p></a></li>
 {% end %}
 
 {% block content %}
-	<a style="font-size:30px;color:#9400D3" href="stuedit/new"><p>新建学生信息</p></a>
+    <div   style="text-align:center;height:120px">
+    <object>
+      <param name="movie" value="/static/create.swf"/>
+      <param name="quality" value="high"/>
+      <param name="wmode"value="transparent"/>
+    <embed src="/static/create.swf"  ></embed></object>
+    </div>
 	<hr>
 	<table align="center" valign="middle">
 		<tr>
